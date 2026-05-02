@@ -1035,3 +1035,10 @@ comment "Simatic LED drivers"
 source "drivers/leds/simatic/Kconfig"
 
 endif # NEW_LEDS
+
+config LEDS_RFNM_WSLED
+	tristate "Enable RFNM's WS2812B driver"
+	depends on LEDS_CLASS
+	help
+	  This simple driver bitbangs LEDs connected to GPIOs, so it
+	  depends on CPU frequency, which is assumed as 1600 MHz.
